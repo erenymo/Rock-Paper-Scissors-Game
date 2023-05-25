@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Rock, Paper, Scissors</title>
+    <!--Tailwind CSS-->
+    <link rel="stylesheet" href="./output/tailwind.css" />
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-b h-screen from-from to-to flex justify-center md:items-center font-primary md:mx-0 px-5"
+  >
+    <main class="container md:my-12 flex flex-col">
+      <!-- CONTAINER START-->
+      <div class="container flex flex-col relative items-center">
+        <!--HEADER SECTION START-->
+        <div
+          class="flex md:w-2/3 w-full justify-between border-2 rounded-xl border-headerOutline p-3 items-center mt-6 md:mt-0"
+        >
+          <div class="">
+            <img class="w-28 md:w-fit" src="images/logo.svg" alt="logo" />
+          </div>
+          <!--SCORE start-->
+          <div
+            class="bg-white flex font-bold flex-col justify-center items-center md:px-12 px-4 md:rounded-xl rounded"
+          >
+            <h1 class="text-scoreText uppercase tracking-widest">Score</h1>
+            <p class="score text-5xl font-bold text-darkText">12</p>
+          </div>
+          <!--SCORE end-->
+        </div>
+        <!--HEADER SECTION END-->
+
+        <!--######GAME AREA start#####-->
+
+        <!-- ####CHOOSING  Rock, Paper, Scissors SECTION START ####-->
+        <div class="picking-screen relative mt-32">
+          <!--background image-->
+          <img
+            class="w-64 md:w-full"
+            src="images/bg-triangle.svg"
+            alt="triangle"
+          />
+
+          <!--Circles-->
+
+          <!--Paper-->
+          <div
+            class="select paper cursor-pointer md:py-8 md:px-9 py-5 px-6 bg-white absolute -top-10 -left-5 rounded-full outline outline-circle outline-paper transform active:translate-y-1 duration-200"
+          >
+            <img src="images/icon-paper.svg" class="bg-white" alt="paper" />
+          </div>
+
+          <!--Scissors-->
+          <div
+            class="select scissors cursor-pointer md:py-8 md:px-9 py-5 px-6 bg-white absolute -top-10 -right-5 rounded-full outline outline-circle outline-scissor transform active:translate-y-1 duration-200"
+          >
+            <img src="images/icon-scissors.svg" class="bg-white" alt="paper" />
+          </div>
+
+          <!--Rock-->
+          <div
+            class="select rock cursor-pointer md:py-9 md:px-9 py-5 px-6 bg-white absolute bottom-0 md:left-24 left-20 rounded-full outline outline-circle outline-rock transform active:translate-y-1 duration-200"
+          >
+            <img src="images/icon-rock.svg" class="bg-white" alt="paper" />
+          </div>
+        </div>
+        <!--Choose Rock, Paper, Scissors END-->
+
+        <!--###### AFTER SELECTION start ######-->
+        <div
+          class="picked-screen flex md:gap-24 gap-16 text-white text-center mt-20 hidden"
+        >
+          <!-- User Picked-->
+          <div class="flex flex-col-reverse gap-16 items-center w-full">
+            <h2 class="uppercase tracking-widest md:text-xl text-md">
+              You Picked
+            </h2>
+            <!--Scissors-->
+            <div
+              class="user user-scissors-selected md:p-16 p-8 bg-white rounded-full outline md:outline-circle outline-mobileCircle outline-scissor hidden"
+            >
+              <img
+                src="images/icon-scissors.svg"
+                class="bg-white"
+                alt="paper"
+              />
+            </div>
+
+            <!--Rock-->
+            <div
+              class="user user-rock-selected md:p-16 p-8 bg-white rounded-full outline md:outline-circle outline-mobileCircle outline-rock hidden"
+            >
+              <img src="images/icon-rock.svg" class="bg-white" alt="paper" />
+            </div>
+
+            <!--Paper-->
+            <div
+              class="user user-paper-selected md:p-16 p-8 bg-white rounded-full outline md:outline-circle outline-mobileCircle outline-paper hidden"
+            >
+              <img src="images/icon-paper.svg" class="bg-white" alt="paper" />
+            </div>
+          </div>
+
+          <!-- WINNER start-->
+          <div
+            class="flex flex-col gap-4 justify-center items-center md:static absolute md:translate-x-0 transform right-1/2 translate-x-1/2 -bottom-36 w-full"
+          >
+            <h2 class="game-lose-text text-5xl text-red-400 hidden">
+              YOU LOSE
+            </h2>
+            <h2 class="game-win-text text-5xl text-green-400 hidden">
+              YOU WIN
+            </h2>
+            <h2 class="game-draw-text text-5xl hidden">DRAW</h2>
+
+            <button
+              class="play-again-btn uppercase bg-white text-rock tracking-widest py-2 px-9 rounded transform active:translate-y-1 duration-200"
+            >
+              Play Again
+            </button>
+          </div>
+
+          <!-- WINNER end-->
+
+          <!--THE HOUSE PICKED-->
+          <div
+            class="flex flex-col-reverse gap-16 text-start items-center w-full"
+          >
+            <h2 class="uppercase tracking-wider md:text-xl text-md">
+              House Picked
+            </h2>
+            <!--Scissors-->
+            <div
+              class="house-scissors-selected md:p-16 p-8 bg-white rounded-full outline md:outline-circle outline-mobileCircle outline-scissor hidden"
+            >
+              <img
+                src="images/icon-scissors.svg"
+                class="bg-white"
+                alt="paper"
+              />
+            </div>
+
+            <!--Rock-->
+            <div
+              class="house-rock-selected md:p-16 p-8 bg-white rounded-full outline md:outline-circle outline-mobileCircle outline-rock hidden"
+            >
+              <img src="images/icon-rock.svg" class="bg-white" alt="paper" />
+            </div>
+
+            <!--Paper-->
+            <div
+              class="house-paper-selected md:p-16 p-8 bg-white rounded-full outline md:outline-circle outline-mobileCircle outline-paper hidden"
+            >
+              <img src="images/icon-paper.svg" class="bg-white" alt="paper" />
+            </div>
+          </div>
+        </div>
+        <!--AFTER SELECTION end-->
+
+        <!--#######GAME AREA end######-->
+
+        <!--RULES MODAL-->
+        <div
+          class="rules-modal bg-white rounded-xl p-8 z-10 absolute top-1/2 transform -translate-y-1/2 hidden"
+        >
+          <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold text-darkText">RULES</h2>
+            <img
+              class="cursor-pointer close-button"
+              src="images/icon-close.svg"
+              alt="close logo"
+            />
+          </div>
+
+          <img class="mt-8" src="images/image-rules.svg" alt="rules image" />
+        </div>
+      </div>
+
+      <!-- Overlay-->
+      <div
+        class="overlay absolute top-0 left-0 h-full w-full bg-black opacity-50 hidden"
+      ></div>
+
+      <!-- CONTAINER END-->
+    </main>
+    <!--RULES-->
+    <div class="w-fit md:mt-16 absolute md:right-10 md:bottom-5 bottom-20">
+      <button
+        class="rules-btn bg-transparent text-white border rounded-md py-1 px-8 tracking-widest font-semibold hover:bg-white hover:text-to transform transition-colors duration-200"
+      >
+        RULES
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
